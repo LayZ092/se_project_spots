@@ -16,12 +16,11 @@
 
 .profile__name {
   margin: 0 0 12px;
-  font-family: "Poppins";
+  font-family: "Poppins", "Arial", sans-serif;
   font-size: 32px;
   font-weight: 500;
   line-height: 32px;
   text-align: left;
-  font-weight: bold;
 }
 
 .profile__description {
@@ -50,10 +49,10 @@
   margin-top: auto;
   margin-right: auto;
   color: #212121;
+  border: none;
 }
 
 .profile__add-btn {
-  margin-left: auto;
   width: 149px;
   height: 52px;
   padding: 18px 32px;
@@ -62,8 +61,9 @@
   background-color: #212121;
   color: #fff;
   border: none;
-  position: fixed;
-  margin: 138px 0 20px 1131px;
+  position: sticky;
+  margin: 138px 0 20px;
+  margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: center;
