@@ -16,7 +16,8 @@ This project is made so all the elements are displayed correctly on popular scre
 
 **Images**
 
-The way you'll do this at work is by exporting images directly from Figma —
+![Mobile](./images/demo/mobile.png)
+![Desktop](./images/demo/desktop.png)
 
 **Tech Stack**
 
