@@ -32,7 +32,7 @@
   overflow: hidden;
   margin-top: 12px;
   margin-bottom: 36px;
-  max-width: 119px;
+  max-width: fit-content;
 }
 
 @media screen and (max-width: 627px) {
