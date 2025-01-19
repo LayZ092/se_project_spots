@@ -1,3 +1,8 @@
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
 .profile {
   display: flex;
   padding: 34px 0 20px;
@@ -77,6 +82,10 @@
   font-weight: 500;
 }
 
+.profile__edit-btn:hover {
+  opacity: 1;
+}
+
 .profile__add-btn {
   max-width: fit-content;
   height: 52px;
@@ -92,6 +101,10 @@
   align-items: center;
   justify-content: center;
   font-family: "Poppins", "Arial", sans-serif;
+}
+
+.profile__add-btn:hover {
+  background-color: #424242;
 }
 
 @media screen and (max-width: 627px) {
