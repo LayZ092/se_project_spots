@@ -29,4 +29,4 @@ This project is made so all the elements are displayed correctly on popular scre
 
 The webpage is deployed to GitHub Pages
 
--Deployment Link:
+-[Deployment Link](https://layz092.github.io/se_project_spots/)

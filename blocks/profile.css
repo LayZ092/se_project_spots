@@ -8,7 +8,7 @@
   height: 190px;
   width: 190px;
   margin-right: 20px;
-  border-radius: 10%;
+  border-radius: 8%;
 }
 
 .profile__content {
@@ -39,7 +39,6 @@
 
 .profile__description {
   margin: 0;
-  font-family: Poppins;
   font-size: 16px;
   font-weight: 500;
   line-height: 16px;
@@ -73,6 +72,9 @@
   color: #212121;
   border: none;
   font-family: "Poppins", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
 }
 
 .profile__add-btn {
@@ -82,10 +84,9 @@
   gap: 8px;
   border-radius: 8px;
   background-color: #212121;
-  color: #fff;
+  color: #fcf5e5;
   border: none;
-  position: sticky;
-  margin: 138px 0 20px;
+  margin-top: auto;
   margin-left: auto;
   display: flex;
   align-items: center;
