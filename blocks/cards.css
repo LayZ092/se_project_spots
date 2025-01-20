@@ -6,12 +6,14 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+  margin-bottom: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, 413px);
   justify-content: center;
   gap: 40px 20px;
   font-weight: 500;
   border-bottom: 1px #21212166 solid;
+  padding-bottom: 40px;
 }
 
 @media screen and (max-width: 627px) {
