@@ -1,11 +1,6 @@
-.button {
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
 .profile {
   display: flex;
-  padding: 34px 0 20px;
+  padding: 34px 10px 20px;
   border-bottom: 1px solid #21212166;
 }
 
@@ -13,7 +8,7 @@
   height: 190px;
   width: 190px;
   margin-right: 20px;
-  border-radius: 8%;
+  border-radius: 8px;
 }
 
 .profile__content {
@@ -79,7 +74,7 @@
 }
 
 .profile__edit-btn:hover {
-  opacity: 1;
+  opacity: 100%;
   cursor: pointer;
 }
 
@@ -104,7 +99,7 @@
 }
 
 .profile__add-btn:hover {
-  opacity: #424242;
+  opacity: 60%;
   cursor: pointer;
 }
 
@@ -128,6 +123,7 @@
     height: 80px;
     width: 80px;
     margin-bottom: 12px;
+    margin-right: 0;
   }
 
   .profile__name {
