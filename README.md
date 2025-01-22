@@ -31,4 +31,6 @@ The webpage is deployed to GitHub Pages
 
 -[Deployment Link](https://layz092.github.io/se_project_spots/)
 
-<!-- Video will go here once complete -->
+**Project Video**
+
+You can watch the project walkthrough video [here](https://drive.google.com/file/d/1jAIThqWVshe4bQZ1GY-PBED-c_6DEwua/view?usp=drive_link)
