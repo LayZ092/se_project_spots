@@ -99,7 +99,7 @@
 }
 
 .profile__add-btn:hover {
-  opacity: 60%;
+  opacity: 80%;
   cursor: pointer;
 }
 
@@ -116,7 +116,7 @@
     align-items: center;
     max-width: 288px;
     text-align: center;
-    padding-top: 20px;
+    padding: 34px 0 20px;
   }
 
   .profile__picture {
@@ -147,7 +147,6 @@
 
   .profile__edit-btn {
     margin: 0;
-    margin-top: 32px;
     margin-bottom: 20px;
   }
 }
