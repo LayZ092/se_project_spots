@@ -54,20 +54,29 @@ function getCardElement(data) {
   return cardElement;
 }
 
-profileEditButton.addEventListener("click", function () {
+function opendModal() {
+  editProfileModal.classList.add("modal_opened");
   editProfileModalNameInput.value = profileName.textContent;
   editProfileModalDescriptionInput.value = profileDescription.textContent;
-  editProfileModal.classList.add("modal_opened");
+}
+
+function closeModal() {
+  editProfileModal.classList.remove("modal_opened");
+}
+
+profileEditButton.addEventListener("click", function () {
+  opendModal();
 });
 
 profileExitButton.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_opened");
+  closeModal();
 });
 
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = editProfileModalNameInput.value;
   profileDescription.textContent = editProfileModalDescriptionInput.value;
+  closeModal();
 }
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
