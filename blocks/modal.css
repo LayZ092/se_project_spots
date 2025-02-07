@@ -39,6 +39,12 @@
   align-items: center;
   border: none;
   background-color: transparent;
+  opacity: 40%;
+}
+
+.modal__exit-btn:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .modal__title {
@@ -68,6 +74,10 @@
   border-radius: 8px;
   border: 1px solid #000000;
   margin-bottom: 32px;
+}
+
+.modal__input:hover {
+  cursor: pointer;
 }
 
 .modal__save-btn {
@@ -111,6 +121,8 @@
 
   .modal__input {
     margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 16px;
   }
 
   .modal__save-btn {
