@@ -43,7 +43,7 @@
 }
 
 .modal__exit-btn:hover {
-  opacity: 1;
+  opacity: 100%;
   cursor: pointer;
 }
 
@@ -72,12 +72,14 @@
   line-height: 20px;
   font-weight: 500;
   border-radius: 8px;
-  border: 1px solid #000000;
+  border: 1px solid #212121;
+  opacity: 40%;
   margin-bottom: 32px;
 }
 
 .modal__input:hover {
   cursor: pointer;
+  opacity: 100%;
 }
 
 .modal__save-btn {
@@ -91,6 +93,10 @@
   font-weight: 500;
   border-radius: 8px;
   font-family: "Poppins", "Arial", sans-serif;
+}
+
+.modal__save-btn:hover {
+  opacity: 80%;
   cursor: pointer;
 }
 
