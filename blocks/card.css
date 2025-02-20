@@ -27,6 +27,15 @@
   cursor: pointer;
 }
 
+.card__like-btn_liked {
+  background-image: url(../images/heart-icon-liked.svg);
+  opacity: 1;
+}
+
+.card__like-btn_liked:hover {
+  background-image: url(../images/heart-icon-liked-faded.svg);
+}
+
 .card__title {
   font-family: "Poppins", "Arial", sans-serif;
   font-size: 20px;
