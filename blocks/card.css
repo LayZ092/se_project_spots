@@ -80,6 +80,5 @@
     line-height: 16px;
     padding-bottom: 1px;
     max-width: 264px;
-    /* Had to add padding bottom to fix the line height isnt enought to fit the letter "g" causing the title to break */
   }
 }

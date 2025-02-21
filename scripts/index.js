@@ -23,6 +23,10 @@ const initialCards = [
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
+  {
+    name: "Golden state bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
 ];
 
 const profileEditButton = document.querySelector(".profile__edit-btn");
@@ -40,9 +44,14 @@ const editProfileModalDescriptionInput = document.querySelector(
 const cardModalLinkInput = document.querySelector("#add-card-link-input");
 const cardModalNameInput = document.querySelector("#add-card-name-input");
 
+const previewModal = document.querySelector("#preview-modal");
+const previewModalImageEl = previewModal.querySelector(".modal__image");
+const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
+
 const editCardModal = document.querySelector("#add-card-modal");
 const cardExitButton = editCardModal.querySelector(".modal__exit-btn");
 const cardFormElement = editCardModal.querySelector(".modal__form");
+const previewModalExitButton = previewModal.querySelector(".modal__exit-btn");
 
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
@@ -60,6 +69,13 @@ function getCardElement(data) {
   cardNameEl.textContent = data.name;
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
+
+  cardImageEl.addEventListener("click", () => {
+    openModal(previewModal);
+    previewModalImageEl.src = data.link;
+    previewModalImageEl.alt = data.name;
+    previewModalCaptionEl.textContent = data.name;
+  });
 
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("card__like-btn_liked");
@@ -117,6 +133,10 @@ cardAddButton.addEventListener("click", () => {
 
 cardExitButton.addEventListener("click", () => {
   closeModal(editCardModal);
+});
+
+previewModalExitButton.addEventListener("click", () => {
+  closeModal(previewModal);
 });
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
