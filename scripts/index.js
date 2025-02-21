@@ -82,7 +82,6 @@ function getCardElement(data) {
   });
 
   cardDeleteButton.addEventListener("click", () => {
-    cardDeleteButton.classList.toggle("card__delete-btn");
     cardElement.remove();
   });
 
@@ -102,6 +101,7 @@ function handleEditFormSubmit(evt) {
   profileName.textContent = editProfileModalNameInput.value;
   profileDescription.textContent = editProfileModalDescriptionInput.value;
   closeModal(editProfileModal);
+  evt.target.reset();
 }
 
 function handleAddCardSubmit(evt) {
@@ -113,8 +113,7 @@ function handleAddCardSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   closeModal(editCardModal);
-
-  cardImageEl.src = data.link;
+  evt.target.reset();
 }
 
 profileEditButton.addEventListener("click", () => {

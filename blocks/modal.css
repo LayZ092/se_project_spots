@@ -185,7 +185,15 @@
   }
 
   .modal__container_type_preview {
+    max-width: 100%;
+    width: 100%;
     padding: 0;
+  }
+
+  .modal__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
   }
 
   .modal__exit-btn_type_preview {
