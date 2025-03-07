@@ -65,18 +65,28 @@
               id="profile-name-input"
               class="modal__input"
               placeholder="Type your name"
+              required
+              maxlength="40"
+              minlength="2"
             />
+            <span id="profile-name-input-error" class="modal__error"></span>
             <label for="profile-description-input" class="modal__label"
-              >Description</label
-            >
-
-            <input
-              name="description"
-              type="text"
-              id="profile-description-input"
-              class="modal__input"
-              placeholder="Describe yourself"
-            />
+              >Description
+              <input
+                name="description"
+                type="text"
+                id="profile-description-input"
+                class="modal__input"
+                placeholder="Describe yourself"
+                required
+                maxlength="200"
+                minlength="2"
+              />
+              <span
+                id="profile-description-input-error"
+                class="modal__error"
+              ></span>
+            </label>
             <button type="submit" class="modal__save-btn">Save</button>
           </form>
         </div>
@@ -95,7 +105,10 @@
               id="add-card-link-input"
               class="modal__input"
               placeholder="Paste a link to the picture"
+              required
             />
+            <span id="add-card-link-input-error" class="modal__error"></span>
+
             <label for="add-card-name-input" class="modal__label"
               >Caption</label
             >
@@ -106,7 +119,12 @@
               id="add-card-name-input"
               class="modal__input"
               placeholder="Type your caption"
+              required
+              maxlength="30"
+              minlength="2"
             />
+            <span id="add-card-name-input-error" class="modal__error"></span>
+
             <button type="submit" class="modal__save-btn">Save</button>
           </form>
         </div>
@@ -122,6 +140,7 @@
         </div>
       </div>
     </div>
+    <script defer src="./scripts/validation.js"></script>
     <script defer src="./scripts/index.js"></script>
   </body>
 </html>
