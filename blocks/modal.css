@@ -129,6 +129,19 @@
 .modal__input:hover {
   cursor: pointer;
   opacity: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.4);
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.modal__input_type_error {
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 20px;
+  line-height: 1;
+  border: 1px solid #ff000099;
 }
 
 .modal__error {
@@ -151,6 +164,11 @@
   font-weight: 500;
   border-radius: 8px;
   font-family: "Poppins", "Arial", sans-serif;
+}
+
+.modal__save-btn_disabled {
+  opacity: 40%;
+  cursor: not-allowed;
 }
 
 .modal__save-btn:hover {
