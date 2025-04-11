@@ -4,50 +4,17 @@ import {
   enableValidation,
   resetValidation,
 } from "../scripts/validation.js";
-import favicon from "../images/favicon.ico";
 import Api from "../utils/Api.js";
 
 import logo from "../images/logo.svg";
 import avatar from "../images/avatar.jpg";
 import pencil from "../images/pencil.svg";
 import plus from "../images/plus.svg";
-import { data } from "autoprefixer";
 
 document.querySelector(".header__logo").src = logo;
 document.querySelector(".profile__picture").src = avatar;
 document.querySelector(".profile__edit-btn img").src = pencil;
 document.querySelector(".profile__add-btn img").src = plus;
-
-// const initialCards = [
-//   {
-//     name: "Val Thorens",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
-//   },
-//   {
-//     name: "Restaurant terrace ",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-//   },
-//   {
-//     name: "An outdoor cafe",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
-//   },
-//   {
-//     name: "A very long bridge, over the forest and through the trees",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
-//   },
-//   {
-//     name: "Tunnel with morning light",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-//   },
-//   {
-//     name: "Mountain house",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
-//   },
-//   {
-//     name: "Golden state bridge",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
-//   },
-// ];
 
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const profileName = document.querySelector(".profile__name");
@@ -194,6 +161,8 @@ function handleEscapeKey(evt) {
 
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
+  const submitBtn = evt.submitter;
+  submitBtn.textContent = "Saving...";
   api
     .editUserInfo({
       name: editProfileModalNameInput.value,
@@ -206,6 +175,9 @@ function handleEditFormSubmit(evt) {
     })
     .catch((err) => {
       console.log(err);
+    })
+    .finally(() => {
+      submitBtn.textContent = "Save";
     });
 
   evt.target.reset();
@@ -213,6 +185,8 @@ function handleEditFormSubmit(evt) {
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
+  const submitBtn = evt.submitter;
+  submitBtn.textContent = "Saving...";
   api
     .addNewCard({
       name: cardModalNameInput.value,
@@ -227,11 +201,17 @@ function handleAddCardSubmit(evt) {
     })
     .catch((err) => {
       console.log(err);
+    })
+    .finally(() => {
+      submitBtn.textContent = "Save";
     });
 }
 
 function handleDeleteCardSubmit(evt) {
   evt.preventDefault();
+  const submitBtn = evt.submitter;
+  submitBtn.textContent = "Deleting...";
+
   api
     .deleteCard(selectedCardId)
     .then(() => {
@@ -240,6 +220,9 @@ function handleDeleteCardSubmit(evt) {
     })
     .catch((err) => {
       console.log(err);
+    })
+    .finally(() => {
+      submitBtn.textContent = "Delete";
     });
 }
 
@@ -247,12 +230,13 @@ function handleDeleteCard(cardElement, cardId) {
   selectedCard = cardElement;
   selectedCardId = cardId;
   openModal(deteleCardModal);
-  // We need to add something here to remember which card to delete
-  // What would you suggest?
 }
 
 function handleAvatarFormSubmit(evt) {
   evt.preventDefault();
+  const submitBtn = evt.submitter;
+  submitBtn.textContent = "Saving...";
+
   api
     .editAvatar({
       avatar: avatarInput.value,
@@ -263,6 +247,9 @@ function handleAvatarFormSubmit(evt) {
     })
     .catch((err) => {
       console.log(err);
+    })
+    .finally(() => {
+      submitBtn.textContent = "Save";
     });
 
   evt.target.reset();
