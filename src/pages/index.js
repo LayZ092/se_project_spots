@@ -1,5 +1,9 @@
 import "../pages/index.css";
-import { settings, enableValidation } from "../scripts/validation.js";
+import {
+  settings,
+  enableValidation,
+  resetValidation,
+} from "../scripts/validation.js";
 import favicon from "../images/favicon.ico";
 import Api from "../utils/Api.js";
 
@@ -124,6 +128,10 @@ function getCardElement(data) {
   const cardLikeButton = cardElement.querySelector(".card__like-btn");
   const cardDeleteButton = cardElement.querySelector(".card__delete-btn");
 
+  if (cardIsLiked(data)) {
+    cardLikeButton.classList.add("card__like-btn_liked");
+  }
+
   cardNameEl.textContent = data.name;
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
@@ -135,15 +143,19 @@ function getCardElement(data) {
     previewModalCaptionEl.textContent = data.name;
   });
 
-  cardLikeButton.addEventListener("click", () => {
-    cardLikeButton.classList.toggle("card__like-btn_liked");
-  });
+  cardLikeButton.addEventListener("click", (evt) =>
+    handleCardLike(evt, cardLikeButton, data._id)
+  );
 
   cardDeleteButton.addEventListener("click", () =>
     handleDeleteCard(cardElement, data._id)
   );
 
   return cardElement;
+}
+
+function cardIsLiked(data) {
+  return data.isLiked;
 }
 
 function openModal(modal) {
@@ -154,6 +166,21 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscapeKey);
+}
+
+function handleCardLike(evt, cardLikeButton, cardId) {
+  const isLiked = cardLikeButton.classList.contains("card__like-btn_liked");
+
+  api
+    .changeLikeStatus(cardId, isLiked)
+    .then((updatedCard) => {
+      cardLikeButton.classList.toggle("card__like-btn_liked");
+
+      return updatedCard.isLiked;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 function handleEscapeKey(evt) {

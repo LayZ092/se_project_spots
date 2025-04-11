@@ -25,7 +25,6 @@
   padding: 32px 50px;
   max-width: 730px;
   width: 100%;
-  min-width: 650px;
   box-sizing: border-box;
   position: relative;
   border-radius: 8px;
@@ -214,10 +213,6 @@
   margin: 0 auto 32px;
 }
 
-#card-delete-modal .modal__container {
-  min-width: 430px;
-}
-
 #card-delete-modal .modal__exit-btn {
   top: 9px;
   right: -35px;
@@ -286,5 +281,30 @@
   .modal__exit-btn_type_preview {
     top: -35px;
     right: 6px;
+  }
+
+  #edit-avatar-modal .modal__input {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  #card-delete-modal .modal__exit-btn {
+    top: -35px;
+    right: 6px;
+    background-image: url(../images/close-light.svg);
+  }
+
+  #card-delete-modal .modal__container {
+    min-width: unset;
+    width: 282px;
+  }
+
+  .modal__form_type_delete {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modal__cancel-btn {
+    width: 100%;
   }
 }
