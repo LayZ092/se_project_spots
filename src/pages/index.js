@@ -174,7 +174,7 @@ function handleEditFormSubmit(evt) {
       profileDescription.textContent = data.about;
       closeModal(editProfileModal);
       evt.target.reset();
-      disableButton(cardSubmitBtn);
+      disableButton(cardSubmitBtn, settings);
     })
     .catch((err) => {
       console.log(err);
@@ -198,7 +198,7 @@ function handleAddCardSubmit(evt) {
       cardsList.prepend(cardElement);
       closeModal(editCardModal);
       evt.target.reset();
-      disableButton(cardSubmitBtn);
+      disableButton(cardSubmitBtn, settings);
     })
     .catch((err) => {
       console.log(err);
@@ -246,7 +246,7 @@ function handleAvatarFormSubmit(evt) {
       document.querySelector(".profile__picture").src = data.avatar;
       closeModal(avatarModal);
       evt.target.reset();
-      disableButton(avatarSubmitBtn);
+      disableButton(avatarSubmitBtn, settings);
     })
     .catch((err) => {
       console.log(err);
