@@ -37,6 +37,10 @@
   background-color: transparent;
 }
 
+.modal__container_type_delete {
+  max-width: 630px;
+}
+
 .modal__image {
   max-width: 80vw;
   max-height: 80vh;
@@ -97,9 +101,10 @@
 }
 
 .modal__title {
-  font-size: 32px;
+  font-size: 24px;
   line-height: 1;
   font-weight: 500;
+  text-align: center;
   margin: 0 0 32px;
   font-family: "Poppins", "Arial", sans-serif;
 }
@@ -176,10 +181,60 @@
   cursor: pointer;
 }
 
+.modal__cancel-btn {
+  width: 156px;
+  padding: 18px 0;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  font-family: "Poppins", "Arial", sans-serif;
+  cursor: pointer;
+}
+
+.modal__cancel-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.modal__form_type_delete .modal__save-btn {
+  background-color: #ff6565;
+  color: #000000;
+}
+
+.modal__form_type_delete .modal__title {
+  white-space: nowrap;
+  text-align: center;
+  width: auto;
+  margin: 0 auto 32px;
+}
+
+#card-delete-modal .modal__exit-btn {
+  top: 9px;
+  right: -35px;
+  background-image: url(../images/close-light.svg);
+  opacity: 100%;
+}
+
 .modal__form {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.modal__form_type_delete {
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+#card-delete-modal .modal__save-btn:hover {
+  background-color: #ff3333;
+  color: #000000;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 627px) {
@@ -226,5 +281,30 @@
   .modal__exit-btn_type_preview {
     top: -35px;
     right: 6px;
+  }
+
+  #edit-avatar-modal .modal__input {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  #card-delete-modal .modal__exit-btn {
+    top: -35px;
+    right: 6px;
+    background-image: url(../images/close-light.svg);
+  }
+
+  #card-delete-modal .modal__container {
+    min-width: unset;
+    width: 282px;
+  }
+
+  .modal__form_type_delete {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modal__cancel-btn {
+    width: 100%;
   }
 }

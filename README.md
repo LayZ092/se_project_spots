@@ -16,16 +16,18 @@ This project is made so all the elements are displayed correctly on popular scre
 
 **Images**
 
-![Mobile](./images/demo/mobile.png)
-![Desktop](./images/demo/desktop.png)
+![Mobile](./src/images/demo/mobile.png)
+![Desktop](./src/images/demo/desktop.png)
 
 **Tech Stack**
 
 -HTML
 -CSS
 -Responsive Design
+-JavaScript
+-Object-Oriented Programming (OOP)
 
-**Deployment**
+- **Deployment**
 
 The webpage is deployed to GitHub Pages
 
